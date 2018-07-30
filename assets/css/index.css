@@ -1,4 +1,7 @@
-.container h1 {
-  color: lightblue;
+body .container {
+  height: 100vh;
+  width: 100vw;
+}
+body .container h1 {
   text-align: center;
 }
