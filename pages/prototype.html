@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prottype</title>
+</head>
+<body>
+    <h2>
+        prototype
+    </h2>
+    <p>
+        prototype看成是对象中的一个属性，但是这个属性有其自身的一些特性
+    </p>
+    <hr>
+    <p>
+        继承的方式有一下几种
+    </p>
+
+    <h3>
+            1. <a href="#yuanxinglian">原型链继承</a>
+            2. <a href="#gouzaohanshu">构造函数继承（对象冒充继承）</a>
+            3. <a href="#zuhejicheng">组合继承（原型链继承+构造函数继承）</a>            
+            4. <a href="#yuanxingshi">原型式继承</a>            
+            5. <a href="#jishengzuhe">寄生组合式继承</a> 
+        
+        <div id="yuanxinglian">
+                function Show(){
+                    this.name="run";
+                }
+                    
+                function Run(){
+                    this.age="20"; //Run继承了Show,通过原型，形成链条
+                }
+                Run.prototype=new Show();
+                var show=new Run();
+                alert(show.name)//结果：run
+
+            <h3>
+                把new的过程看成是一次函数的调用
+            </h3>
+        </div>
+        <div id="gouzaohanshu">
+            
+        </div>
+        <div id="zuhejicheng">
+            
+        </div>
+        <div id="yuanxingshi">
+            
+        </div>
+        <div id="jishengzuhe">
+            
+        </div>
+    </h3>
+</body>
+</html>
