@@ -11,16 +11,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>csc的个人博客</title>
     <style>
-        *{
-            opacity: 1;
-        }
-        #canvas{
-            display:block;
-            background:#fff;
-            position: absolute;
-            z-index: -10;
-        }
-
+ 
     </style>
 </head>
 <body>
@@ -43,6 +34,9 @@
             </li>
             <li class="nav-item disabled">
                 <a href="#js-frame" class="nav-link">JS框架</a>
+            </li>
+            <li class="nav-item disabled">
+                <a href="#es6" class="nav-link">ES6</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -83,9 +77,54 @@
                 <h1>js框架</h1>
                 <p>
                     jQuery
-                    VUE
-                    REACT
-                    REACT NATIVE
+                    VUE 声明周期问题  router vuex
+                    REACT createClass render
+                    REACT NATIVE  -------
+                </p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="es6">
+                <h1>ES6</h1>
+                <h5>
+                    关于ES6中，let const 个人理解
+                </h5>
+                <p>
+                    ES6中新增了两个声明变量的方式，let和const。
+                    下面将对let、const以及var做粗略比较。
+                    （处于学习阶段，如果错误，请不吝指正）
+                </p>
+                <p>
+                    let、var：
+                    let我理解为块级作用域，不存在声明提升。
+                    在一个script标签内部使用let声明一个变量，这个变量只存在于这个script的作用域中
+                    <br>
+                        let name = 'Geek_Chen';
+                    此时的name<em>不是</em>window上的一个变量，是存在于foo函数中的一个变量。
+                    <br>
+                    var name = 'Geek_Chen';
+                    此时的name<em>是</em>window上的一个变量
+                    <br>
+                </p>
+                <hr>
+                <p>
+                    const:
+                    用于声明一个不改变内存地址的常量。
+                    曾在面试中遇到这样一个问题：
+                    const obj = {};
+                    然后对obj进行修改，譬如：
+                    <br>
+                    obj.name = 'Geek_Chen' 、 会发生什么
+                    <br>
+                    处于初级学习阶段的我被难住了，因为那时对于js中的堆栈问题始终不是很明白。
+                    <p>
+                    answer：可以对obj进行正常的添加修改等操作。
+                    <br>
+                    请注意，之前我们对const的解释是 用于声明一个不改变内存地址的常量。
+                    也就是说，我们声明了obj后对其进行修改，修改的只是其在栈中的属性，并没有对其所在堆中的指针（个人理解为 每个引用数据类型都在堆中有自己的内存空间，也就是指针）
+                    做修改，所以 在const了obj之后，是可以对其进行修改的。
+                    <hr>
+                        var: 使用var声明变量，很容易引起全局变量污染问题，虽然js中有垃圾回收机制，但作为初级学者是不可控的，所以我们在日常开发中，应该尽量减少对var的使用
+
+                    </p>
                 </p>
             </div>
         </div>
@@ -93,8 +132,5 @@
     </div>
     <script src="./assets/js/bg.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script>
-
-    </script>
 </body>
 </html>
